@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>ESTADISTICA INDUSTRIAL</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="93665253-0448-4124-89c4-e13e9a5b3ff4" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_multi-axis_gimbal_rig.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/calculator_green.svg"/></div><h1 class="page-title">ESTADISTICA INDUSTRIAL</h1><p class="page-description"></p></header><div class="page-body"><p id="a056f382-4b55-4f7d-a9bc-9fbbf5212913" class=""><strong>UNIDAD 1</strong></p><p id="09d946fe-b138-4610-bd58-29d24e16bcf0" class="">DISTRIBUCION DE PROBABILIDAD (CONTINUA Y DISCRETA)</p><p id="99749031-efb0-43a2-852d-7316ea81df0a" class=""><strong>UNIDAD 2</strong></p><p id="7a7fe8f8-8f9f-4eb7-9f8c-91bc353c3ac2" class="">PRUEBAS DE HIPOTESIS PARA DISTRIBUCIONES ESPECIALES (JI-CUADRADO/ANOVA)</p><p id="5c1ffeeb-c21a-49ac-9936-f2f8e99061ea" class=""><strong>UNIDAD 3</strong></p><p id="2f73b099-04e8-414c-a180-12065eae897e" class="">ANALISIS DE REGRESION Y CORRELACION</p><p id="286fde53-d8f1-4a33-8fce-95f11033a5fc" class=""><strong>UNIDAD 4</strong></p><p id="cba7a0d3-40a0-4035-99ee-aad6a19cbaf4" class="">ANALISIS DE CONFRABILIDAD (GAGE R Y R)</p><p id="af1e204b-6cbf-4395-a384-d0b68e3f5c1c" class=""><strong>ESTADISTICA</strong></p><p id="b2750665-3a2c-42e1-8469-5139007c180c" class="">Es una disciplina científica que se ocupa desde la obtención del orden y análisis de un conjunto de datos con el fin de obtener aplicaciones y predicciones sobre fenómenos observados</p><p id="27456c9b-2a06-40e1-8786-660261a02369" class=""><strong>EXPERIMENTO</strong></p><p id="5217dddc-9d6c-44d2-bfb1-cbf0d02c3a4e" class="">Es la actividad que origina un evento</p><p id="860ec62e-1a83-4578-98f7-832face65761" class=""><strong>ESPACIO MUESTRAL</strong></p><p id="d09c993e-9bb2-42a7-b597-5e84c2ce511b" class="">Es el conjunto de todos los resultados posibles o eventos de un experimento</p><p id="756ea533-7d48-4200-a57d-39459e9bc2d5" class=""><strong>EVENTO</strong></p><p id="6f890f72-6166-4ec3-ad61-97c4a6bb588a" class="">Es uno o mas de los posibles resultados de hacer algo</p><p id="96ce5c9b-3e9b-4448-a58c-0ec66aa8c1b3" class=""><strong>EVENTO MUTUAMENTE EXCLUYENTES O INDEPENDIENTES</strong></p><p id="b9c43171-97d2-4d7d-8c94-79ac7e346fd1" class="">Si uno y solo uno de ellos puede tener lugar a un tiempo</p><p id="a8f52299-89c2-4d38-9b85-a7c8f7affeda" class=""><strong>DISTRIBUCION DE PROBABILIDAD</strong></p><p id="33cfaacf-8662-46e0-823d-f40ef8a1c7b4" class="">Es una herramienta fundamental para la</p><p id="326239e4-91ff-4f25-b6c2-05717c7a23ca" class=""><strong>VARIABLE ALEATORIA DISCRETA</strong></p><p id="c8d88f20-30ea-4276-9f38-f76ea0b4ab16" class="">Cuando puede solo tomar ciertos valores enteros en un numero finito de valores o se puede listar en una sucesión infinita donde hay un primer elemento</p><p id="f2f56974-3b85-47c5-b27f-a9bf0b83c39b" class=""><strong>VARIABLE ALEATORIA CONTINUA</strong></p><p id="bc6023ba-9256-4f68-82eb-f07c9dfa29d1" class="">Cuando toma valores en cualquier punto de un intervalo (a, b) de la recta real. Discreta [1,2,3,4,5] infinita, continua a-----------b mas amplio</p><p id="04ecd434-5441-420f-864f-5d36bd8bf008" class=""><strong>TIPOS DE DISTRIBUCIONES</strong></p><ul id="005b1b5e-fc1b-4e8a-a95e-43f3e4f7e653" class="bulleted-list"><li style="list-style-type:disc">uniforme: continua</li></ul><ul id="9e3de415-71c7-4ccd-a8fc-bbf1400f49e4" class="bulleted-list"><li style="list-style-type:disc">bernoull: discreta</li></ul><ul id="1d42989b-8ed5-4fe4-b68f-530af83806cd" class="bulleted-list"><li style="list-style-type:disc">exponencial: continua</li></ul><ul id="e578b920-1485-4ded-9c24-47174aada5ad" class="bulleted-list"><li style="list-style-type:disc">binomial: discreta</li></ul><ul id="48f28db9-fc67-46a2-b28f-b34708bede9b" class="bulleted-list"><li style="list-style-type:disc">paisson: discreta</li></ul><ul id="3774eeeb-df07-429c-b2b0-9e75bd79f7de" class="bulleted-list"><li style="list-style-type:disc">cuadrado: continua</li></ul><p id="c2e1d5ef-2fb1-434d-8ccb-6cb88252c908" class=""><strong>DISTRIBUCION DE PROBABILIDAD DISCRETA</strong></p><p id="e4ffe5aa-bcc8-4ccf-815d-74ab146d3730" class="">Permite establecer toda la gama posible de variables de un suceso cuando este se describe con una variable aleatoria discreta</p><p id="555a0978-15dd-4080-b39b-7688d9b37a42" class="">
+</p><p id="f429a960-d60b-468a-b057-f7016909fa89" class=""><strong>DISTRIBUCION DE PROBABILIDADES CONTINUA</strong></p><p id="638b533d-7fdf-428b-bd9d-59e01d1ea72c" class="">Describe las probabilidades de los posibles valores de una variable aleatoria continua</p><p id="a6862c64-e0a5-444f-969e-445393cfb4e9" class="">
+</p><p id="6e6fa0a3-b5c5-4306-87ef-416ed23027cb" class=""><strong>REGLAS DE PROBABILIDAD</strong></p><ol type="1" id="b63f35d7-9ecd-454a-8a78-32b4de3de8e4" class="numbered-list" start="1"><li>Probabilidad para eventos mutuamente excluyentes o independientes <p id="1b388d59-ab83-40fb-b7d0-e53485a9df08" class="">   Excluyentes P (A o B)= P(A) + P(B)</p></li></ol><ol type="1" id="52c0f073-d548-49dd-a582-099656cae791" class="numbered-list" start="2"><li>Probabilidad para eventos no mutuamente excluyentes o dependientes <p id="e4793fb9-3f23-4cba-9523-09f537fa658a" class="">   P(AB) = P(A) * P(B)</p></li></ol><ol type="1" id="f8a3513b-76e6-46f8-a9c8-5436effa26a7" class="numbered-list" start="3"><li>Probabilidad continua discreta conjunta para eventos exluyentes o dependientes <p id="84560cdc-9194-4c70-a4dd-f90d52c5c2cb" class="">   P(A o B)= P(A) + P(B) = P(AB)</p></li></ol><ol type="1" id="4592e255-e5e7-45d8-912c-5dc99d6d5d04" class="numbered-list" start="4"><li>Probabilidad condicional P(A/B) = P(B/A) <p id="89b8392c-23a6-4ceb-a2ca-dc1249d16cd5" class="">                    P = (A)  P(B/A) = P(B)</p></li></ol><ol type="1" id="ce7b67da-5d6d-44a5-befe-050a75178487" class="numbered-list" start="5"><li>No excluyentes o dependientes prob. Condicional <p id="877f486b-35be-47bb-8596-033a09e06534" class=""> P(A/B)= P(A/B) / P(B)</p></li></ol><p id="df88cab0-5240-47ba-97e6-e1a3144970f4" class=""><strong>PROBABILIDAD CONJUNTA</strong></p><p id="dd3249b1-9ea3-4cbf-b38f-15bcc0845f6f" class="">P(AB)=P(A/B)*P(B)</p><p id="3c08d3ac-a1c0-46f0-b5cd-4720a0639649" class="">P(AB)=P(B/A)*P(A)</p><p id="b6b3c118-1085-497b-9803-553d240ee89d" class="">
+</p><p id="bfd7af78-da40-4728-bbba-46462e73eb7b" class=""><strong>EJERCICIO 1</strong></p><p id="066a5bee-3d2c-4ad9-8c47-048f4a1b97b8" class="">La siguiente tabla muestra las reacciones de las rotantes a un nuevo plan de impuestos a la propiedad de acuerdo a su filiacion partidistica</p><table id="2ac87deb-978d-40c6-9918-1179181d25da" class="simple-table"><tbody><tr id="05589cef-9fa0-418b-9a2f-7aaf0bb1b020"><td id="=XER" class="">Filacion</td><td id="J{jn" class="">Reaccion</td><td id="`aNQ" class=""></td><td id="Gz|t" class=""></td><td id="lg_s" class=""></td></tr><tr id="e0b134cf-74e1-4e0e-899b-72ba2220d59d"><td id="=XER" class="">Partido</td><td id="J{jn" class="">A Favor</td><td id="`aNQ" class="">Neutral</td><td id="Gz|t" class="">En Contra</td><td id="lg_s" class="">Total</td></tr><tr id="af6b7c0a-2b81-4afd-ac5b-2a17ee69d8ed"><td id="=XER" class="">(A)</td><td id="J{jn" class="">120</td><td id="`aNQ" class="">20</td><td id="Gz|t" class="">20</td><td id="lg_s" class="">160</td></tr><tr id="4a28419d-b8d8-4939-b25a-dbd8a79358a1"><td id="=XER" class="">(B)</td><td id="J{jn" class="">50</td><td id="`aNQ" class="">30</td><td id="Gz|t" class="">60</td><td id="lg_s" class="">140</td></tr><tr id="1a5e098a-a7c8-4356-95e1-b2997f697c57"><td id="=XER" class="">(C)</td><td id="J{jn" class="">50</td><td id="`aNQ" class="">10</td><td id="Gz|t" class="">40</td><td id="lg_s" class="">300</td></tr><tr id="98dcd041-e6b2-4c0f-b92a-0328542627cd"><td id="=XER" class="">Total</td><td id="J{jn" class="">220</td><td id="`aNQ" class="">60</td><td id="Gz|t" class="">120</td><td id="lg_s" class="">400</td></tr></tbody></table><p id="f6c65698-fd08-40f0-bf36-16db8006beaf" class=""><strong>a)</strong>Elabore una tabla de probabilidades conjuntas</p><p id="c317c306-e204-440d-a6fd-a9fb9f153e31" class=""><strong>b</strong>)Calcule las siguientes probabilidades:</p><div id="8aa72110-05f0-48d3-9727-043c16ca9603" class="column-list"><div id="35bd67cf-32e1-42ec-8e62-0f3394fd791f" style="width:25%" class="column"><ul id="5a8f8cf9-c98f-44d4-b1f0-0dc3562e7f89" class="bulleted-list"><li style="list-style-type:disc">p(contra)</li></ul><ul id="611e6dff-d923-4f8d-ab45-07f0711c9057" class="bulleted-list"><li style="list-style-type:disc">p(B y central)</li></ul><ul id="aeb75970-2a57-4c45-bcd6-0183e53b436b" class="bulleted-list"><li style="list-style-type:disc">p(C)</li></ul></div><div id="ce7f00e6-b763-4afc-82f7-023206da2b66" style="width:20.833333333333332%" class="column"><ul id="f7150cc1-a9f2-4cd3-b682-1df120001ea8" class="bulleted-list"><li style="list-style-type:disc">p(c y a favor)</li></ul><ul id="ddbabbc5-080f-4fa3-9852-f0c67e095141" class="bulleted-list"><li style="list-style-type:disc">p(contra / b)</li></ul><ul id="bfa8760c-4341-4192-9316-f8aa903661f5" class="bulleted-list"><li style="list-style-type:disc">p(B*A)</li></ul></div><div id="a61699be-b123-4357-8e9d-18f5c5fbaab3" style="width:54.166666666666664%" class="column"><ul id="5e698500-22ee-4d14-8780-2d23be6f4410" class="bulleted-list"><li style="list-style-type:disc">p(A o a favot)</li></ul></div></div><table id="fabdc9bb-341e-41af-9c5c-32f8bbce99b6" class="simple-table"><thead class="simple-table-header"><tr id="f330ec89-be32-4a5a-82be-05454320d06e"><th id="}&lt;g\" class="simple-table-header-color simple-table-header">Filacion</th><th id="jd\V" class="simple-table-header-color simple-table-header">Reaccion</th><th id="nkqL" class="simple-table-header-color simple-table-header"></th><th id="sZp]" class="simple-table-header-color simple-table-header"></th><th id=";}eP" class="simple-table-header-color simple-table-header"></th></tr></thead><tbody><tr id="b41ed1d1-9147-4a3b-bf6f-d2eac023d4f1"><td id="}&lt;g\" class="">Partido</td><td id="jd\V" class="">A Favor</td><td id="nkqL" class="">Neutral</td><td id="sZp]" class="">En Contra</td><td id=";}eP" class="">Total</td></tr><tr id="3e6d19af-7ae0-497d-9f6f-97d1aa13dd80"><td id="}&lt;g\" class="">(A)</td><td id="jd\V" class="">0.3</td><td id="nkqL" class="">0.05</td><td id="sZp]" class="">0.05</td><td id=";}eP" class="">0.4</td></tr><tr id="a76e873d-e8b3-427a-868f-524feb4dd924"><td id="}&lt;g\" class="">(B)</td><td id="jd\V" class="">0.125</td><td id="nkqL" class="">0.075</td><td id="sZp]" class="">0.15</td><td id=";}eP" class="">0.35</td></tr><tr id="83e84e44-2e0c-4fc0-832d-bb1bf3be6cd4"><td id="}&lt;g\" class="">(C)</td><td id="jd\V" class="">0.125</td><td id="nkqL" class="">0.025</td><td id="sZp]" class="">0.1</td><td id=";}eP" class="">0.75</td></tr><tr id="606c5419-6d3b-4741-9cb4-1ba23e16776f"><td id="}&lt;g\" class="">Total</td><td id="jd\V" class="">0.55</td><td id="nkqL" class="">0.15</td><td id="sZp]" class="">0.3</td><td id=";}eP" class="">1</td></tr></tbody></table><p id="357aed1a-746f-4605-9d81-181238d2483f" class="">
+</p><p id="c6420bd3-edba-47ba-a3a9-20dea33c0215" class=""><strong>EJERCICIO 3</strong></p><p id="f62e2996-80c5-4013-8a04-2918fb18b9af" class="">Un grupo de interés público  está planeando impugnar las primas de seguro de automóviles en una de tres ciudades: Atlanta, Baltimore o Cleveland. La probabilidad de que se escoja Atlanta es de 0.40, Baltimore 0.35 y Cleveland 25%. El grupo sabe también que tiene una posibilidad de 60% de recibir un dictamen a su favor si escoge Baltimore, de 45% si eligen Atlanta y 35% si se decide por Cleveland. Si el grupo ha recibido un dictamen favorable, ¿qué ciudad es más probable que haya escogido?</p><table id="07490fec-fd58-4b6b-9a85-1779febce9d3" class="simple-table"><tbody><tr id="e0ff8ff5-62dc-49a3-8f79-f97ad64b5851"><td id="WPs:" class="">Ciudad</td><td id="|xA[" class="">P (E)</td><td id="~p}R" class="">P (DF)</td><td id="RtJq" class="">P (E y DF)</td><td id="xw{g" class="">P (C/DF)</td></tr><tr id="ffc71d1a-242f-459a-adc5-93ba7972b7de"><td id="WPs:" class="">Atlanta</td><td id="|xA[" class="">0.4</td><td id="~p}R" class="">0.45</td><td id="RtJq" class="">0.18</td><td id="xw{g" class="">0.37696335</td></tr><tr id="f8f25659-57b0-4efd-bd59-b10bdd618778"><td id="WPs:" class="">Baltimore</td><td id="|xA[" class="">0.35</td><td id="~p}R" class="">0.6</td><td id="RtJq" class="">0.21</td><td id="xw{g" class="">0.43979058</td></tr><tr id="edb62893-9b8d-438c-9f6d-984ad4f9bfbd"><td id="WPs:" class="">Cleveland</td><td id="|xA[" class="">0.25</td><td id="~p}R" class="">0.35</td><td id="RtJq" class="">0.0875</td><td id="xw{g" class="">0.18324607</td></tr><tr id="f3d1ff4d-0bca-46d9-8efc-b7e61e8add3f"><td id="WPs:" class="">Total</td><td id="|xA[" class=""></td><td id="~p}R" class=""></td><td id="RtJq" class="">0.4775</td><td id="xw{g" class=""></td></tr></tbody></table><p id="8a422b36-9592-4ec2-8ef0-acc7bb6f28ea" class="">
+</p><p id="715cc3d5-63a5-45f7-a6c1-d4ecb0ea441f" class=""><strong>EJERCICIO 6 </strong></p><p id="e46333e2-dcca-458d-858a-82ec565f008d" class="">El número de vagonetas solicitadas en renta a una agencia de alquiler<br/>De autos durante un periodo de 50 días se presenta en la siguiente tabla.<br/><br/><strong>a) </strong>Determine la demanda promedio (valor esperado)<br/><br/><strong>b) </strong>Determine la varianza y desviación estándar.</p><table id="0f18da83-754f-450c-9884-bfa0955531d0" class="simple-table"><tbody><tr id="88572aa1-dd09-4b5d-b077-0e8a8350e686"><td id="cAd[" class="" style="width:141.25px">Demanda Posible</td><td id="RZ|}" class="" style="width:146px">Numero a Días</td><td id="SrIY" class="" style="width:159.671875px">Probabilidad P(X)</td><td id="aWua" class="" style="width:192.1875px">Valor Ponderado XP(X)</td></tr><tr id="570a18c7-bf7f-4985-a02e-24998a787d4c"><td id="cAd[" class="" style="width:141.25px">3</td><td id="RZ|}" class="" style="width:146px">3</td><td id="SrIY" class="" style="width:159.671875px">0.06</td><td id="aWua" class="" style="width:192.1875px">0.18</td></tr><tr id="4f772fd9-d04f-455d-bf76-e0c0238fdfd6"><td id="cAd[" class="" style="width:141.25px">4</td><td id="RZ|}" class="" style="width:146px">7</td><td id="SrIY" class="" style="width:159.671875px">0.14</td><td id="aWua" class="" style="width:192.1875px">0.56</td></tr><tr id="b8a7475b-18ba-4490-9eef-638462de5808"><td id="cAd[" class="" style="width:141.25px">5</td><td id="RZ|}" class="" style="width:146px">12</td><td id="SrIY" class="" style="width:159.671875px">0.24</td><td id="aWua" class="" style="width:192.1875px">1.2</td></tr><tr id="b760c982-cd35-46ff-b931-3b0881fdf99c"><td id="cAd[" class="" style="width:141.25px">6</td><td id="RZ|}" class="" style="width:146px">14</td><td id="SrIY" class="" style="width:159.671875px">0.28</td><td id="aWua" class="" style="width:192.1875px">1.68</td></tr><tr id="f12e71df-cb2a-4676-a753-00dadf03618b"><td id="cAd[" class="" style="width:141.25px">7</td><td id="RZ|}" class="" style="width:146px">10</td><td id="SrIY" class="" style="width:159.671875px">0.2</td><td id="aWua" class="" style="width:192.1875px">1.4</td></tr><tr id="66047d3a-1f9d-4a9c-b61a-9790a58495e3"><td id="cAd[" class="" style="width:141.25px">8</td><td id="RZ|}" class="" style="width:146px">4</td><td id="SrIY" class="" style="width:159.671875px">0.08</td><td id="aWua" class="" style="width:192.1875px">0.64</td></tr><tr id="05f822a9-0f0f-4f7b-8734-82aef5161bb7"><td id="cAd[" class="" style="width:141.25px"></td><td id="RZ|}" class="" style="width:146px">50</td><td id="SrIY" class="" style="width:159.671875px">Valor Esperado</td><td id="aWua" class="" style="width:192.1875px">5.66</td></tr></tbody></table><p id="112c85fc-d804-4cf0-ba7f-a19bcf15f878" class="">VALOR ESPERADO: E(X)= ∑X*P(X)</p><hr id="e97472bb-08fa-4f07-ba74-02248df62cc2"/><p id="f9a54aba-3f09-4336-ad47-c501547e63ea" class=""><strong>EJERCICIO 8</strong></p><p id="f511cce5-6679-498a-adaf-c5e7b1ecd48e" class="">Un vendedor al mayoreo de frutas y legumbres comercia frambuesas.</p><p id="8cbb2892-5af4-45c3-8261-01fa6e5775a9" class="">Este producto tiene una vida útil muy limitada.</p><p id="7272d00c-9cc8-4335-94e1-ee1c1971cd70" class="">Si no se vende el día de su entrega, ya no tiene valor.</p><p id="c6bdb2c1-29c1-4741-8845-7c2c31f8ccf3" class="">Una cajita de frambuesa cuesta $20 y el vendedor recibe $50 por ella. Determina el número de cajas que debe comprar para tener la <mark class="highlight-red"><em>menor pérdida</em></mark><mark class="highlight-red"> </mark>esperada, en base a la tabla siguiente.</p><div id="9caa6e78-4a0b-4b25-adaa-eb5675b80b40" class="column-list"><div id="636e217d-8198-46c0-88f1-b32773afa0e9" style="width:43.75%" class="column"><table id="14723cbf-26b0-4965-8d8e-a7d99269dd8e" class="simple-table"><tbody><tr id="b192da6d-6f38-4777-87ae-fdff64508fc3"><td id="WqdZ" class="" style="width:171.625px">Ventas Diarias</td><td id="Zjjk" class="" style="width:171.625px">Frecuancia de Ventas</td><td id="CdTd" class="" style="width:171.625px">Probabilidad</td></tr><tr id="39583a32-a7da-4eb5-a272-6156f8dd2041"><td id="WqdZ" class="" style="width:171.625px">10</td><td id="Zjjk" class="" style="width:171.625px">26</td><td id="CdTd" class="" style="width:171.625px">0.26</td></tr><tr id="29eca07b-0bae-4f9e-b595-aa82d9de2389"><td id="WqdZ" class="" style="width:171.625px">11</td><td id="Zjjk" class="" style="width:171.625px">24</td><td id="CdTd" class="" style="width:171.625px">0.24</td></tr><tr id="99fcf220-d492-4499-928a-f89de358cff6"><td id="WqdZ" class="" style="width:171.625px">12</td><td id="Zjjk" class="" style="width:171.625px">23</td><td id="CdTd" class="" style="width:171.625px">0.23</td></tr><tr id="e11f4a18-34ed-4ce6-9e68-f48d1aa95480"><td id="WqdZ" class="" style="width:171.625px">13</td><td id="Zjjk" class="" style="width:171.625px">27</td><td id="CdTd" class="" style="width:171.625px">0.27</td></tr><tr id="f1264026-1ab0-447e-9448-f5d9fcb1903f"><td id="WqdZ" class="" style="width:171.625px"></td><td id="Zjjk" class="" style="width:171.625px">100</td><td id="CdTd" class="" style="width:171.625px">1</td></tr></tbody></table></div><div id="6416e5c9-1415-49d3-9ced-0416b59e0ad3" style="width:56.25%" class="column"><table id="b924e4ac-bbb2-45ef-9c88-d085cba24cf3" class="simple-table"><tbody><tr id="1366a331-11db-40f6-81f4-cbc8e9f38fbc"><td id="cHZc" class="">Existencia</td><td id="Hhzk" class="">Existencias</td><td id="gAUc" class="">Existencias</td><td id="N`_Z" class="">Existencias</td><td id="n&lt;kp" class="">Existencias</td></tr><tr id="07504f22-e22a-4ab4-9b7c-2e9ba8fe377d"><td id="cHZc" class="">Peticiones</td><td id="Hhzk" class="">10</td><td id="gAUc" class="">11</td><td id="N`_Z" class="">12</td><td id="n&lt;kp" class="">13</td></tr><tr id="d57a996f-890e-4db5-9e25-3ccf51c63743"><td id="cHZc" class="">10</td><td id="Hhzk" class="">0</td><td id="gAUc" class="">20</td><td id="N`_Z" class="">40</td><td id="n&lt;kp" class="">60</td></tr><tr id="1ff70015-63d8-4c07-a39a-2c0732495e4e"><td id="cHZc" class="">11</td><td id="Hhzk" class="">30</td><td id="gAUc" class="">0</td><td id="N`_Z" class="">20</td><td id="n&lt;kp" class="">40</td></tr><tr id="d3c61a12-c56a-4fc3-839b-92c91e4309d6"><td id="cHZc" class="">12</td><td id="Hhzk" class="">60</td><td id="gAUc" class="">30</td><td id="N`_Z" class="">0</td><td id="n&lt;kp" class="">20</td></tr><tr id="21305f9f-a029-41b7-83e1-efa404f7ec4f"><td id="cHZc" class="">13</td><td id="Hhzk" class="">90</td><td id="gAUc" class="">60</td><td id="N`_Z" class="">30</td><td id="n&lt;kp" class="">0</td></tr></tbody></table></div></div><div id="e10586ea-7021-459f-8123-f83d88cae613" class="column-list"><div id="217aeb32-4ada-4016-99c6-8785a31aa14f" style="width:93.75%" class="column"><table id="1f6b1325-e73a-439b-a9cf-b6255fc1c687" class="simple-table"><tbody><tr id="6f5dc3be-10e1-451d-8232-12a5124113fb"><td id="{Huh" class="">PERDIDA ESPERADA AL TENER 10 CAJAS DE EXISTENCIA</td><td id="TfAQ" class="">PERDIDA ESPERADA AL TENER 10 CAJAS DE EXISTENCIA</td><td id="{zKP" class="">PERDIDA ESPERADA AL TENER 10 CAJAS DE EXISTENCIA</td><td id="a;_G" class="">PERDIDA ESPERADA AL TENER 10 CAJAS DE EXISTENCIA</td><td id="^|Zr" class=""></td><td id="zJio" class=""></td><td id="}lOZ" class=""></td></tr><tr id="d8ce729e-9b96-4087-ac18-dc485e6cb867"><td id="{Huh" class="">PETICIONES</td><td id="TfAQ" class="">PERDIDA CONDICIONAL</td><td id="{zKP" class="">PROBABILIDAD</td><td id="a;_G" class="">PERDIDA ESPERADA</td><td id="^|Zr" class="">11 CAJAS</td><td id="zJio" class="">12 CAJAS</td><td id="}lOZ" class="">13 CAJAS</td></tr><tr id="74323e43-1b3c-4099-8e1a-b4ef0264eed4"><td id="{Huh" class="">10</td><td id="TfAQ" class="">0</td><td id="{zKP" class="">0.26</td><td id="a;_G" class="">0</td><td id="^|Zr" class="">5.2</td><td id="zJio" class="">10.4</td><td id="}lOZ" class="">15.6</td></tr><tr id="c8129d6f-35e0-42e3-823c-ea8c59d9153c"><td id="{Huh" class="">11</td><td id="TfAQ" class="">30</td><td id="{zKP" class="">0.24</td><td id="a;_G" class="">7.2</td><td id="^|Zr" class="">0</td><td id="zJio" class="">4.8</td><td id="}lOZ" class="">9.6</td></tr><tr id="a758dabe-b300-40d3-bfdf-ac45a0e18e02"><td id="{Huh" class="">12</td><td id="TfAQ" class="">60</td><td id="{zKP" class="">0.23</td><td id="a;_G" class="">13.8</td><td id="^|Zr" class="">6.9</td><td id="zJio" class="">0</td><td id="}lOZ" class="">4.6</td></tr><tr id="30f8b23d-a7df-4329-8bac-0e6f4f639940"><td id="{Huh" class="">13</td><td id="TfAQ" class="">90</td><td id="{zKP" class="">0.27</td><td id="a;_G" class="">24.3</td><td id="^|Zr" class="">16.2</td><td id="zJio" class="">8.1</td><td id="}lOZ" class="">0</td></tr><tr id="d6672928-58e2-40fb-9567-70dbe62329aa"><td id="{Huh" class=""></td><td id="TfAQ" class=""></td><td id="{zKP" class="">MENOR PERDIDA</td><td id="a;_G" class="">45.3</td><td id="^|Zr" class="">28.3</td><td id="zJio" class="">23.3</td><td id="}lOZ" class="">29.8</td></tr></tbody></table></div><div id="7d51e1ec-8784-4de6-82b5-d1c02f05ec65" style="width:6.25%" class="column"><table id="51f4c726-fa9f-47ef-a4c0-918959b74258" class="simple-table"><tbody><tr id="1fbaf627-2ff7-4909-b0e4-912a20e6c6e4"><td id="_dxX" class="">DEMANDA POSIBLE (Xi)</td></tr><tr id="3948fe90-df79-43ab-817c-c333be49439b"><td id="_dxX" class="">3</td></tr><tr id="0fcc58e5-4adb-4983-8b12-ad40e2b540af"><td id="_dxX" class="">4</td></tr><tr id="4d15684c-7858-414b-bc7a-5b82b5e5368c"><td id="_dxX" class="">5</td></tr><tr id="eb08a30a-1dc0-4deb-9391-b09c83d5ad88"><td id="_dxX" class="">6</td></tr><tr id="f23c5c0e-9c2e-45e1-8f36-4b0455d82544"><td id="_dxX" class="">7</td></tr><tr id="b31a7f16-c522-456b-bfe6-13acd8d6d4d4"><td id="_dxX" class="">8</td></tr><tr id="d1200395-94cc-4ab7-be53-79968519190d"><td id="_dxX" class="">5.5</td></tr><tr id="52bf4c89-16be-4dbf-a474-332a94a17824"><td id="_dxX" class="">3.5</td></tr><tr id="6c19f15c-8226-4261-b6d2-183a87b435d3"><td id="_dxX" class="">1.87</td></tr></tbody></table></div></div><p id="b0938691-0ab5-4500-adde-543f12e48c28" class="">
+</p><p id="6fda477e-c8ff-4cff-9686-6580f4058266" class="">
+</p><p id="89ba769c-3314-42c2-acc7-dcf6b82f0237" class="">
+</p><figure id="379af22a-1a7b-425d-ad28-426d97aa6731" class="link-to-page"><a href="https://www.notion.so/19-enero-2023-11A-379af22a1a7b425dad28426d97aa6731?pvs=21">19 enero 2023 (11A)</a></figure><p id="9ab31c00-0808-42f1-b44c-b48f6bf77dc3" class="">Poco después de nacer un niño es clasificado de acuerdo con la escala de Apgar.<br/>Las posibles clasificaciones son 0, 1, …, 10, de acuerdo con el color, tono<br/>muscular, esfuerzo respiratorio, ritmo cardiaco e irritabilidad de reflejos (la mejor<br/>calificación posible es 10). Sea x la calificación Apgar de un recién nacido<br/>escogido al azar, en cierto hospital durante el año siguiente, Calcule el valor<br/>esperado.<br/></p><table id="a1258690-d3f5-4fd6-970d-b3f5d355c8c0" class="simple-table"><tbody><tr id="d9a410e4-f8cf-4659-8351-f502f872d7ea"><td id="wx|z" class="">11a</td><td id="&gt;jU|" class="">19-ene-23</td><td id="fx|p" class=""></td><td id="Lpxh" class=""></td><td id="m{&gt;o" class=""></td><td id="^cMa" class=""></td><td id="Y}S|" class=""></td><td id="@p;o" class=""></td><td id="[jPA" class=""></td><td id="bWhl" class=""></td><td id="QIdl" class=""></td><td id="eXhb" class=""></td><td id="^VPV" class=""></td></tr><tr id="26afa2f0-e196-4916-822f-d7fc523b73f8"><td id="wx|z" class="">x</td><td id="&gt;jU|" class="">0</td><td id="fx|p" class="">1</td><td id="Lpxh" class="">2</td><td id="m{&gt;o" class="">3</td><td id="^cMa" class="">4</td><td id="Y}S|" class="">5</td><td id="@p;o" class="">6</td><td id="[jPA" class="">7</td><td id="bWhl" class="">8</td><td id="QIdl" class="">9</td><td id="eXhb" class="">10</td><td id="^VPV" class=""></td></tr><tr id="8bfd311c-903c-4543-8d18-a917e77be3e6"><td id="wx|z" class="">p(x)</td><td id="&gt;jU|" class="">0.02</td><td id="fx|p" class="">0.01</td><td id="Lpxh" class="">0.02</td><td id="m{&gt;o" class="">0.05</td><td id="^cMa" class="">0.02</td><td id="Y}S|" class="">0.04</td><td id="@p;o" class="">0.18</td><td id="[jPA" class="">0.37</td><td id="bWhl" class="">0.25</td><td id="QIdl" class="">0.12</td><td id="eXhb" class="">0.01</td><td id="^VPV" class="">Ʃxp(x)</td></tr><tr id="d3d260c2-7c02-46f9-a101-4cec08ba5718"><td id="wx|z" class="">xp(x)</td><td id="&gt;jU|" class="">0</td><td id="fx|p" class="">0.01</td><td id="Lpxh" class="">0.04</td><td id="m{&gt;o" class="">0.15</td><td id="^cMa" class="">0.08</td><td id="Y}S|" class="">0.2</td><td id="@p;o" class="">1.08</td><td id="[jPA" class="">2.59</td><td id="bWhl" class="">2</td><td id="QIdl" class="">1.08</td><td id="eXhb" class="">0.1</td><td id="^VPV" class="">7.33</td></tr><tr id="6be2244e-82c5-4c84-becf-b441199e361b"><td id="wx|z" class=""></td><td id="&gt;jU|" class=""></td><td id="fx|p" class=""></td><td id="Lpxh" class=""></td><td id="m{&gt;o" class=""></td><td id="^cMa" class=""></td><td id="Y}S|" class=""></td><td id="@p;o" class=""></td><td id="[jPA" class=""></td><td id="bWhl" class=""></td><td id="QIdl" class=""></td><td id="eXhb" class="">V(x)=Ʃxp(x)</td><td id="^VPV" class=""></td></tr></tbody></table><p id="7a0fb7b8-065b-4b9b-b85b-963df389761c" class="">Consideremos una universidad con 15,000 estudiantes y señalamos a 𝑋 =<br/>número de cursos en los cuales está registrado un estudiante seleccionado al<br/>azar. La probabilidad de 𝑋 aparece a continuación. Como 𝑝(1), sabemos que<br/>(0. 01)(15, 000) = 150 estudiantes inscritos para un curso, y de forma similar para<br/>los otros valores de 𝑋. Calcular el valor esperado de acuerdo a la información<br/>proporcionada.<br/></p><table id="f7fc7b8b-b135-42b8-bfa4-ce06f62cfbfc" class="simple-table"><tbody><tr id="d8609854-a5ff-47e1-b9a4-57bd130d6a87"><td id="gvos" class="">11B</td><td id="M&gt;}z" class="">19-ene-23</td><td id="eT\E" class=""></td><td id="U[IU" class=""></td><td id="erKw" class=""></td><td id="ICB~" class=""></td><td id="Vbw:" class=""></td><td id="S^S^" class=""></td><td id="LpG[" class=""></td></tr><tr id="abca81cd-911f-4ad4-8587-11eeb930a65d"><td id="gvos" class="">x</td><td id="M&gt;}z" class="">1</td><td id="eT\E" class="">2</td><td id="U[IU" class="">3</td><td id="erKw" class="">4</td><td id="ICB~" class="">5</td><td id="Vbw:" class="">6</td><td id="S^S^" class="">7</td><td id="LpG[" class=""></td></tr><tr id="20d444da-b22a-4910-b18a-d1ed33c19af0"><td id="gvos" class="">p(x)</td><td id="M&gt;}z" class="">0.01</td><td id="eT\E" class="">0.03</td><td id="U[IU" class="">0.13</td><td id="erKw" class="">0.25</td><td id="ICB~" class="">0.39</td><td id="Vbw:" class="">0.17</td><td id="S^S^" class="">0.02</td><td id="LpG[" class="">V(x)</td></tr><tr id="d2006740-e238-40e2-a809-916c80add657"><td id="gvos" class="">xp(x)</td><td id="M&gt;}z" class="">0.01</td><td id="eT\E" class="">0.06</td><td id="U[IU" class="">0.39</td><td id="erKw" class="">1</td><td id="ICB~" class="">1.95</td><td id="Vbw:" class="">1.02</td><td id="S^S^" class="">0.14</td><td id="LpG[" class="">4.57</td></tr></tbody></table><p id="d1d76d5d-2e07-4200-b84d-0bb8bae13bf6" class="">Un distribuidor de aparatos electrodomésticos vende tres modelos diferentes de<br/>congeladores verticales con capacidad de 13.5, 15.9 y 19.1 pies cúbicos de<br/>espacio de almacenaje. Sea X = cantidad de espacio de almacenaje de un<br/>congelador comprado por el siguiente cliente, a continuación se describe la tabla<br/>de probabilidad.<br/>Calcule el valor esperado<br/></p><table id="03d9f363-80f0-4602-8bfe-03d13bc02439" class="simple-table"><tbody><tr id="48fa3cbe-fdc2-418c-81f2-36bd55a5cf84"><td id="SoJT" class="">11C</td><td id="F[_M" class="">19-ene-24</td><td id="m&gt;UB" class=""></td><td id="]P}T" class=""></td><td id=";&gt;Ii" class=""></td></tr><tr id="dfe93640-5b16-4634-ba80-369e37788420"><td id="SoJT" class="">x</td><td id="F[_M" class="">13.5</td><td id="m&gt;UB" class="">15.9</td><td id="]P}T" class="">19.1</td><td id=";&gt;Ii" class=""></td></tr><tr id="d44ad218-7ec5-4b6f-ba66-9c8401ba64a0"><td id="SoJT" class="">p(x)</td><td id="F[_M" class="">0.2</td><td id="m&gt;UB" class="">0.5</td><td id="]P}T" class="">0.3</td><td id=";&gt;Ii" class="">V(x)</td></tr><tr id="7612f673-b730-4a1f-96cb-0a9053d77b20"><td id="SoJT" class="">xp(x)</td><td id="F[_M" class="">2.7</td><td id="m&gt;UB" class="">7.95</td><td id="]P}T" class="">5.73</td><td id=";&gt;Ii" class="">16.38</td></tr></tbody></table><p id="2dc0c3d3-065d-4e25-a312-dc72f9461dc2" class=""><strong>Valor esperado </strong></p><p id="369162d9-f7af-401f-a6a1-5207026220cb" class="">
+</p><p id="1409737c-9e68-45a8-8e69-95a15da52dbc" class="">se ha determinado que el numero de camiones de carga que arriban cada hora a una bodega sigue  la distribucion de probabilidad de la tabla 4.1</p><p id="6ccd1d2c-67a8-4b98-b35a-b895673a5ea9" class="">a) calcule el numero esperado de arribos x por  hora,</p><p id="0ef7778e-2102-4d0a-b96d-9f6c339ee94e" class="">b) la varianza, </p><p id="4fa2e58a-1c12-446b-b455-e92750ca59ae" class="">c)la desviacion estandar de la variable aleatoria discreta</p><p id="65cec096-3d0f-487c-bdb6-b803be9b2e66" class="">
+</p><p id="5b675501-68f0-472b-b5e9-9a834e59a4bc" class="">taba 4.1 arribo de camiones de carga por hora a una bodega:<div class="indented"><p id="0cd7a047-bb88-4c46-b862-a3484fb05333" class="">
+</p></div></p><p id="859e828c-eacf-48ef-a654-426395ae73c4" class=""><strong>TABLA</strong></p><p id="38689a3e-8500-433f-b595-eacdc13fdc63" class="">
+</p><p id="2ef878f3-8214-4c9c-b1f7-ef4796499165" class="">Lauch Faircloth, un intermediario comercial del mercado de Pompano Beach, Florida, se dedica a comprar y revender vegetales. En este momento se encuentra en la temporada de chayotes y Lauch compra actualmente a $8 la caja (350 cajas por camión). Si revende los chayotes el día siguiente, obtiene $16 por caja. Si se tarda más de un día recibe $7 por caja. La demanda del día siguiente de chayotes es una variable aleatoria con una probabilidad de demanda de dos, tres, cuatro o cinco camiones de 0.2,0.25,0.4,0.15 respectivamente. ¿Cuántas cajas debe esperar Lauch vender diariamente si hace su compra de manera estudiada?</p><p id="e670bbc2-85a1-4c23-a01f-807e7355023f" class="">
+</p><p id="36989d6a-2ee2-4cd8-9f0b-ce7826370784" class="">
+</p><p id="7b7de803-b9da-4153-803f-1231350d4f8b" class=""><strong>PROBLEMA </strong></p><p id="5d71b916-9c8c-4ced-8075-35440af7ac7a" class="">Durante un año en particular, el 70% de las acciones ordinarias inscritas en la Bolsa de Valores de Nueva York elevaron su valor de mercado, mientras que el 30% restante permaneció sin cambios o redujo su valor de mercado. Al inicio del año, un servicio de consultoría accionaria eligió 10 emisiones de acciones como “especialmente recomendables”. Si las 10 emisiones representa una selección aleatoria, ¿Cuál es la probabilidad de que a) las 10 emisiones y b) al menos ocho emisiones hayan elevado su valor de mercado?</p><p id="b0668c55-4538-4cc6-991b-acb4ed3a71bc" class="">
+</p><p id="316802ee-381c-4076-bb11-4641a4f9d160" class="">Una compañia que produce cristal fino sabe por experiencia que 10% de copas tienen imperfecciones  y deben clasificarse como de segunda.</p><p id="eaa9c39d-b762-4c3b-b550-831c8adf5acf" class="">a)Entre 6 copas selecciona al azar.¿que tan probable es q?</p><p id="32426ebd-be0c-4b61-a3ee-2abc89576b00" class="">
+</p><p id="bb96ff32-a0d5-4552-aed3-e1b3c3d03b54" class="">
+</p><p id="44783a8c-e2d6-4068-88e6-a12e0244948e" class="">
+</p><p id="1bf92580-9cdd-4e98-909f-739363a52d31" class="">
+</p><p id="9a983f3d-152b-4b5b-b758-604b363a2822" class=""><span style="border-bottom:0.05em solid"><strong>25-01-2024</strong></span></p><p id="5f97d1a8-6579-4b73-a57c-19570a8cc05f" class="">Cuando se prueban tarjetas de circuito empleadas en la manufactura de reproductores de discos compactos, a la larga el porcentaje de partes defectuosas es el 5%. Sea X=número de tarjetas defectuosas en una muestra seleccionada al azar de tamaño n=25.</p><ol type="1" id="ddb36bae-bc8c-465a-9999-aa5e14c48bd9" class="numbered-list" start="1"><li>Determine P(X≤2)</li></ol><p id="78d31130-98e7-4c66-9ce2-28563b0acd0c" class="">Para a) n= 25, p=0.05, r=2</p><p id="fbeda9ee-fad1-46c5-9708-8e635d5fd497" class="">=0.1271</p><ol type="1" id="754b5b82-d15e-4d3c-b18d-5704e6d1c93f" class="numbered-list" start="1"><li>Determine P(≥5)</li></ol><p id="d5531b05-2323-4f22-9f0e-d1f5c26b56f6" class="">Para b) r=5</p><p id="cb5a938f-3cf2-41e4-be66-4fc86c80bb7e" class="">=0.9988</p><ol type="1" id="44778a34-2700-479b-a59b-72360a32db8f" class="numbered-list" start="1"><li>¿Cuál es la probabilidad de que ninguna de las tarjetas esta defectuosa?</li></ol><p id="d87b3d85-6b50-4c9c-b516-d5b8b42a0572" class="">Para c) n=0</p><p id="60ebe46e-5f59-43d2-8184-8eaec81bc3b7" class="">=0.2774</p><p id="0fa8d62d-8a3f-48f8-b1d2-05ff1bee11c2" class="">Suponga que solo 20% de los automovilistas se detienen por completo en el crucero, donde hay un semáforo con luz roja intermitente, cuando no ven otros automóviles. Cuál es la probabilidad de que entre 20 automovilistas seleccionados al azar:</p><ol type="1" id="1629b8ee-ce6f-4570-8b47-54b164a0c078" class="numbered-list" start="1"><li>A lo mucho 6 se detengan por completo</li></ol><ol type="1" id="4f06a46b-0eb4-463c-8c28-ce96b0ecb74b" class="numbered-list" start="2"><li>Que exactamente 6 se detengan por completo</li></ol><ol type="1" id="e03edcb9-8390-4dcc-b7a3-6972eca13186" class="numbered-list" start="3"><li>Al menos 6 se detengan por completo</li></ol><table id="1e80f178-7062-4d2e-8054-84fcfb942185" class="simple-table"><tbody><tr id="e269cd61-a992-40f9-afef-0d082fdc3235"><td id="X|{p" class="">n=20</td><td id="lezY" class=""></td><td id="W\bF" class="">A)</td><td id="Gqno" class="">0.08669251</td></tr><tr id="d3ff338e-52d5-4b70-82bd-d077be5554f2"><td id="X|{p" class="">p=0.20</td><td id="lezY" class=""></td><td id="W\bF" class="">B)</td><td id="Gqno" class="">0.19579221</td></tr><tr id="045c26b6-c25b-4542-b3f1-547c6a02946e"><td id="X|{p" class="">r=6</td><td id="lezY" class=""></td><td id="W\bF" class="">C)</td><td id="Gqno" class="">0.1090997</td></tr></tbody></table><p id="f8d5fb73-72ca-436c-b4f0-afae75625d9f" class="">
+</p><p id="4ee8b52c-b4db-4c4e-bedf-37699e18c296" class="">
+</p><p id="16f9807e-10c8-4bde-959e-7d96aebf5992" class="">un tipo particulas de raqueta de tenis se fabrica en mediano y extra-grande. 60% de todos los clientes de cierta tienda buscan el tamaño extra-grande.</p><p id="63c54c34-8595-4985-9429-b93d8f3950a5" class="">a)Entre 10 clientes seleccionados alazar, ¿cual es la probabilidad de que por lo menos 6 buscan el tamañ extra-grande?</p><p id="824d9ecd-f7f0-4c6f-ac2e-15d70ac1976d" class="">b)entre 10 clientes seleccionados alazar, ¿cual es la probabilidad de que un maximo de 5 clientes busquen el tamaño extra grande?</p><table id="dabe2bb1-47f3-4dd8-b828-d6dd5e466aa8" class="simple-table"><tbody><tr id="07e42989-04a0-4d39-ac7a-f1edfaf4fdd7"><td id="siCo" class="">n=10</td><td id="`zxT" class=""></td><td id="^MRw" class="">a)p(x&gt;6)</td><td id="O?tS" class="">0.63310326</td></tr><tr id="52a17ee4-c094-402f-acf8-d6ff9cc15edc"><td id="siCo" class="">p=0.60</td><td id="`zxT" class=""></td><td id="^MRw" class="">b)p(x&lt;5)</td><td id="O?tS" class="">0.63310326</td></tr><tr id="47b5de00-a4e1-4829-b975-0eabaf083891"><td id="siCo" class="">r=5</td><td id="`zxT" class=""></td><td id="^MRw" class=""></td><td id="O?tS" class=""></td></tr></tbody></table><p id="7eace36d-cee9-4907-8d55-eca708bb99b1" class="">
+</p><p id="9899c677-5149-48a6-bd0a-0d1677a85305" class="">
+</p><p id="9caae007-9381-423e-b6da-08c288ca1932" class="">26/1/2024</p><p id="ff3c2560-9cbc-416a-94fc-255112458f58" class="">Distribucion de poisson</p><p id="3b8811db-b15d-4426-8e84-10cffe45b4d5" class="">
+</p><p id="f7445cd3-1528-4833-991f-06b1c2a74602" class="">p(x)=</p><p id="9a67c94b-5ac7-4ad6-bb8a-792fa4970fc2" class="">x= media de presentaciones</p><p id="78c88f57-8d39-46b4-b777-8697beb5589d" class="">x=numero de presentaciones</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
